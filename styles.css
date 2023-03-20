@@ -1,5 +1,10 @@
 @import url('https://fonts.google.com/specimen/Montserrat'); 
 @import url('https://fonts.googleapis.com/css2?family=Fraunces');
+:root {
+    --font-size: 1rem;
+    --header-font-size: 2rem;
+    --title-font-size: 3rem;
+  }
     
     
     body {
@@ -12,7 +17,7 @@
         { 
             padding-top: auto;
             padding-bottom: 10px;
-            font-size: 11px; text-align: center; 
+            font-size: var(--font-size); text-align: center; 
         }
     .attribution a 
         { 
@@ -47,8 +52,7 @@
     }    
 
     .grid-container {   
-        width: 40vw;
-        height: 40vh;
+        width: 800px;
         border-radius: 2%;
         overflow: hidden;
         display: grid;
@@ -59,11 +63,11 @@
     .content-container {
         background-color: hsl(0, 0%, 100%);
         padding: 10%;
-        font-size: 14px;
+        font-size: var(--font-size);
     }
 
     button {
-        width: 15vw;
+        width: 100%;
         height: 50px;
         background-color: hsl(158, 36%, 37%);
         color:hsl(0, 0%, 100%);
@@ -74,30 +78,30 @@
     .price {
         display: flex;
         font-family: 'Fraunces', serif;
-        width: 15vw;
         height: 3vh;
         align-items: center;
         padding: 2vh 0;
+        margin: 4vh 0;
     }
     
     .current-price {
-        width: 8vw;
+    
         color: hsl(158, 36%, 37%);
         font-weight: 700;
-        font-size: 2rem;
+        font-size: var(--header-font-size);
     }
 
     .previous-price {
         width: 4vw;
-        margin-left: auto;
-        margin-right: 0;
+        margin-left: 2rem;
+        margin-right: auto;
         text-decoration: line-through;
         color: silver;
     }
 
     h2 {
         text-transform: uppercase;
-        font-size: 13px;
+        font-size: var(--font-size);
         font-weight: 100;
         letter-spacing: 5px;
         color: grey;
@@ -105,13 +109,29 @@
     }
 
     .title {
-        font-size: 40px;
+        font-size: var(--title-font-size);
         font-family: 'Fraunces', serif;
         font-weight: 700;
     }
 
     p {
-        font-size: 1.1rem;
+        font-size: var(--font-size);
         font-weight: 500;
         color: grey;
     }
+
+    @media only screen and (max-width: 475px) {
+        :root {
+            --font-size: 0.5rem;
+            --header-font-size: 1rem;
+            --title-font-size: 1.5rem;
+          }
+            .grid-container {   
+                width: 300px;
+                border-radius: 2%;
+                overflow: hidden;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1.5fr;
+            }
+      }
